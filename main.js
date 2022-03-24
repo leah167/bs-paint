@@ -48,6 +48,18 @@ while (count <= gridWidth * gridWidth) {
 
 // Add queries for all your squares, palette colors, and brush here.
 // (Note the singular or plural used in that sentence!)
+let palette = document.querySelectorAll('.palette div');
+let brush = document.querySelector('.current-brush');
+let canvas = document.querySelectorAll(".canvas div");
+let clicked = false
+const body = document.querySelector("body");
+const app = document.querySelector(".app");
+const darkModeButton = document.querySelector(".dark-mode-button");
+
+
+
+
+
 
 
 
@@ -61,6 +73,34 @@ while (count <= gridWidth * gridWidth) {
 // run as event listeners (after the next step is set up) isn't a
 // bad idea for testing purposes.
 
+for (const color of palette) {
+  color.addEventListener('click', function () {
+    if (color.classList[0] === 'palette-color') {
+      brush.classList.replace(brush.classList[1], color.classList[1])
+    }
+    
+  })
+}
+
+
+
+//! When mouseDown turns click true
+let mouseDown = document.addEventListener("mousedown", function () {
+  clicked = true;
+  console.log(clicked)
+});
+
+//! When mouseUp turns click false
+let mouseUp = document.addEventListener("mouseup", function () {
+  clicked = false
+});
+
+const changeTheme = darkModeButton.addEventListener("click", function() {
+  body.classList.toggle("dark-mode");
+});
+
+
+
 
 
 /**************************
@@ -71,3 +111,29 @@ while (count <= gridWidth * gridWidth) {
 // You'll need to add the appropriate event listener for each
 // square and for each palette color from the functions you
 // wrote above.
+
+
+
+
+
+for (const square of canvas) {
+  square.addEventListener('mouseenter', function () {
+    
+    if (clicked === true) {
+      square.classList.replace(square.classList[1], brush.classList[1]);
+      
+    }
+    
+    
+  })
+ 
+}
+
+for (const square of canvas) {
+  square.addEventListener('click', function () {
+    
+    square.classList.replace(square.classList[1], brush.classList[1]);
+    clicked = false
+  })
+}
+

@@ -1,29 +1,57 @@
 .app {
   display: flex;
   height: 500px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
+
+.dark-mode{
+  background-color: black;
+  filter: invert(1);
+}
+
+.dark-mode-button {
+  font-weight: bold;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 25px;
+
+}
+  
 
 .headings {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .brush-selection {
   height: 70px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
 }
 
 .paint {
   height: 250px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .palette {
   display: flex;
   margin-left: -30px;
+  
 }
 
 .brush {
   display: flex;
+  
 }
 
 .icon {
@@ -44,6 +72,8 @@
   height: 300px;
   width: 300px;
   border: 1px solid black;
+  margin: 10px;
+  
 }
 
 .square {
@@ -51,21 +81,26 @@
 }
 
 .color-1 {
+  background-color: aqua;
 
 }
 
 .color-2 {
+  background-color: blueviolet;
 
 }
 
 .color-3 {
+  background-color: chartreuse;
 
 }
 
 .color-4 {
+  background-color: hotpink;
 
 }
 
 .color-5 {
+  background-color: lavender;
 
 }
